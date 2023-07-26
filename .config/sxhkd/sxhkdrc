@@ -1,0 +1,13 @@
+# Adjust gaps using Super key + Scroll
+super + button4
+    bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) + 5 ))
+
+super + button5
+    bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) - 5 ))
+
+super + alt + button4
+    bspc config window_gap $(( $(bspc config window_gap) + 5 ))
+
+super + alt + button5
+    bspc config window_gap $(( $(bspc config window_gap) - 5 ))
+

@@ -1,0 +1,76 @@
+# Include other config files int to this file.
+include ~/.config/i3/workspace.config
+include ~/.config/i3/*.config
+include ~/.config/i3/.windows
+
+# Setting mod key.
+set $mod Mod4
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# focus the child container
+#bindsym $mod+d focus child
+
+set $i3lockwall i3lock -i ~/slackware.png -t
+
+bindsym $mod+Ctrl+Shift+l exec --no-startup-id $i3lockwall
+# shutdown / restart / suspend...
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
+
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $i3lockwall, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+BackSpace mode "$mode_system"
+
+
+# i3 bar.
+# Start i3blocks to display a workspace bar
+# bar {
+#     font pango: SauceCodePro Nerd Font Bold 12
+#     i3bar_command i3bar
+#     output primary
+#     position top
+#     status_command i3blocks
+#     strip_workspace_numbers yes
+#     tray_output nonprimary
+#
+#     colors {
+#         background #282A36
+#         statusline #F8F8F2
+#         separator  #44475A
+#
+#         # focused_workspace  #44475A #44475A #F8F8F2
+#         # active_workspace   #282A36 #44475A #F8F8F2
+#         # inactive_workspace #282A36 #282A36 #BFBFBF
+#         # urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#         # binding_mode       #FF5555 #FF5555 #F8F8F2
+#
+#         # Vibrant Gruvbox color palette
+#         focused_workspace  #FB4934 #FB4934 #EBDBB2
+#         active_workspace   #458588 #458588 #EBDBB2
+#         inactive_workspace #3C3836 #282828 #928374
+#         urgent_workspace   #83A598 #83A598 #EBDBB2
+#         binding_mode       #83A598 #FB4934 #EBDBB2
+#
+#     }
+# }
+

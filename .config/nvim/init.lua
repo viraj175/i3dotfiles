@@ -1,0 +1,6 @@
+require("tom.core.keymaps")
+require("tom.core.plugins")
+-- require("tom.core.plugins_config.lualine")
+-- require("tom.core.plugins_config.nvim-tree")
+-- require("tom.core.plugins_config.nvim-comp")
+require("tom.core.plugins_config")

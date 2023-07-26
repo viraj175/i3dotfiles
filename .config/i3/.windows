@@ -1,0 +1,45 @@
+default_border pixel 3
+
+# Example i3 configuration for Alacritty
+for_window [class="Alacritty"] border pixel 3
+
+# Make all urxvts use a 1-pixel border:
+# ror_window [class="urxvt"] border pixel 1
+
+# # MY color pallete
+# # class                 border  bground text    indicator child_border
+# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# client.background       #F8F8F2
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Cattpuccino color palette
+#
+# client.focused          #91DDFF #91DDFF #191724 #91DDFF #91DDFF
+# client.focused_inactive #191724 #191724 #191724 #191724 #191724
+# client.unfocused        #6F6F70 #6F6F70 #E2E2E2 #6F6F70 #6F6F70
+# client.urgent           #191724 #FFA1A1 #191724 #FFA1A1 #FFA1A1
+# client.placeholder      #6F6F70 #6F6F70 #191724 #6F6F70 #6F6F70
+# client.background       #E2E2E2
+#
+#-------------------------------------------------------------------------------------------------------------------------------
+
+# Gruvbox color palette
+client.focused          #9D59B8 #9D598B #EBDBB2 #9D598B #9D59B8
+client.focused_inactive #282828 #282828 #928374 #282828 #282828
+client.unfocused        #3C3836 #3C3836 #EBDBB2 #3C3836 #3C3836
+client.urgent           #FB4934 #FB4934 #EBDBB2 #FB4934 #FB4934
+client.placeholder      #3C3836 #3C3836 #EBDBB2 #3C3836 #3C3836
+client.background       #EBDBB2
+
+#-------------------------------------------------------------------------------------------------------------------------------
+
+# gaps
+gaps inner 20px
+# gaps outer 10px
+
+
